@@ -1,0 +1,148 @@
+:root {
+  --color-primary: #19191a;
+  --color-secondary: #f9a825;
+  --color-accent: #c62828;
+  --color-bg: #fff;
+  --color-bg-secondary: #f7f7fa;
+  --color-text: #19191a;
+  --color-text-light: #6f6f6f;
+  --color-border: #e0e0e0;
+  --sidebar-width: 220px;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: "Segoe UI", system-ui, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+
+.sidebar {
+  width: var(--sidebar-width);
+  background: var(--color-primary);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 0 0 0;
+  position: relative;
+}
+
+.sidebar .logo {
+  font-weight: bold;
+  font-size: 2rem;
+  padding: 0 24px 24px 24px;
+  color: var(--color-accent);
+  letter-spacing: 2px;
+}
+
+.sidebar nav {
+  flex: 1;
+}
+
+.sidebar nav a {
+  display: block;
+  color: #fff;
+  padding: 14px 34px;
+  font-size: 1.06rem;
+  border-left: 4px solid transparent;
+  transition: background 0.13s, border 0.13s;
+  border-radius: 0 16px 16px 0;
+  text-decoration: none;
+}
+
+.sidebar nav a.router-link-active {
+  background: var(--color-bg-secondary);
+  color: var(--color-primary);
+  border-left: 5px solid var(--color-accent);
+}
+
+.main-content {
+  flex: 1;
+  padding: 40px 6vw;
+  background: var(--color-bg);
+  min-width: 320px;
+}
+
+.card {
+  background: var(--color-bg-secondary);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 32px;
+  margin-bottom: 32px;
+}
+
+/* Form styles */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--color-accent);
+  outline: none;
+}
+
+.btn {
+  background: var(--color-accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background: var(--color-secondary);
+  transform: translateY(-2px);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 64px;
+  }
+  
+  .sidebar .logo {
+    font-size: 1.2rem;
+    padding: 0 8px 24px;
+  }
+  
+  .sidebar nav a {
+    padding: 14px 0;
+    text-align: center;
+  }
+  
+  .main-content {
+    padding: 20px 4vw;
+  }
+}
