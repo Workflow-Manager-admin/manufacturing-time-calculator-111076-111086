@@ -78,7 +78,6 @@ body {
   margin-bottom: 32px;
 }
 
-/* Form styles */
 .form-group {
   margin-bottom: 1.5rem;
 }
@@ -126,7 +125,6 @@ input:focus, select:focus, textarea:focus {
   cursor: not-allowed;
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
   .sidebar {
     width: 64px;

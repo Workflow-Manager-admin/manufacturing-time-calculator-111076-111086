@@ -1,6 +1,6 @@
 <template>
   <div class="app-container">
-    <SidebarNav />
+    <Sidebar v-if="authStore.isAuthenticated" />
     <main class="main-content" aria-live="polite">
       <router-view></router-view>
     </main>
@@ -9,12 +9,19 @@
 
 <script>
 import { defineComponent } from 'vue'
-import SidebarNav from '@/components/Sidebar.vue'
+import { useAuthStore } from '@/stores/auth'
+import Sidebar from '@/components/Sidebar.vue'
 
 export default defineComponent({
   name: 'App',
   components: {
-    SidebarNav
+    Sidebar
+  },
+  setup() {
+    const authStore = useAuthStore()
+    return {
+      authStore
+    }
   }
 })
 </script>

@@ -1,14 +1,12 @@
-import pluginJs from "@eslint/js";
-import pluginReact from "eslint-plugin-react";
+import pluginVue from "eslint-plugin-vue";
 
 export default [
-  { files: ["**/*.{js,mjs,cjs,jsx}"] },
-  { 
-    languageOptions: { 
+  {
+    files: ["**/*.{js,mjs,cjs,vue}"],
+    languageOptions: {
       parserOptions: {
         ecmaVersion: "latest",
-        sourceType: "module",
-        ecmaFeatures: { jsx: true }
+        sourceType: "module"
       },
       globals: {
         document: true,
@@ -17,19 +15,13 @@ export default [
         expect: true
       }
     },
+    plugins: {
+      vue: pluginVue
+    },
     rules: {
-
-     'no-unused-vars': ['error', { varsIgnorePattern: 'React|App' }]
-
-    }
-  },
-  pluginJs.configs.recommended,
-  {
-    plugins: { react: pluginReact },
-    rules: {
-      "react/react-in-jsx-scope": "off",
-      "react/jsx-uses-react": "off",
-      "react/jsx-uses-vars": "error"
+      "vue/multi-word-component-names": "off",
+      "vue/no-unused-vars": "error",
+      "no-unused-vars": "error"
     }
   }
-]
+];

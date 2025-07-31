@@ -11,7 +11,6 @@ export const useAuthStore = defineStore('auth', {
   
   actions: {
     async login(credentials) {
-      // Demo authentication - replace with actual authentication logic
       if (credentials.username && credentials.password) {
         const user = { username: credentials.username }
         localStorage.setItem('mct-user', JSON.stringify(user))
